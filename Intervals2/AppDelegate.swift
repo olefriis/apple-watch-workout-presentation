@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let healthStore = HKHealthStore()
 
+    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
+        healthStore.handleAuthorizationForExtension(completion: { success, error in
+            print("Success for applicationShouldRequestHealthAuthorization: \(success)")
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        })
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

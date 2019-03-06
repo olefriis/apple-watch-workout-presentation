@@ -19,6 +19,9 @@
 		6EF6E57D222FEC4500A58A68 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6E57C222FEC4500A58A68 /* InterfaceController.swift */; };
 		6EF6E57F222FEC4500A58A68 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6E57E222FEC4500A58A68 /* ExtensionDelegate.swift */; };
 		6EF6E581222FEC4500A58A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6E580222FEC4500A58A68 /* Assets.xcassets */; };
+		6EF6E591222FECEC00A58A68 /* RunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6E590222FECEC00A58A68 /* RunController.swift */; };
+		6EF6E595222FF02B00A58A68 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF6E594222FF02B00A58A68 /* HealthKit.framework */; };
+		6EF6E598222FF03E00A58A68 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF6E597222FF03E00A58A68 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,11 @@
 		6EF6E57E222FEC4500A58A68 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		6EF6E580222FEC4500A58A68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EF6E582222FEC4500A58A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF6E590222FECEC00A58A68 /* RunController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunController.swift; sourceTree = "<group>"; };
+		6EF6E592222FF02B00A58A68 /* Intervals2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Intervals2.entitlements; sourceTree = "<group>"; };
+		6EF6E594222FF02B00A58A68 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		6EF6E596222FF03E00A58A68 /* Intervals2 WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Intervals2 WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		6EF6E597222FF03E00A58A68 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF6E595222FF02B00A58A68 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF6E598222FF03E00A58A68 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +117,7 @@
 				6EF6E56C222FEC4400A58A68 /* Intervals2 WatchKit App */,
 				6EF6E57B222FEC4500A58A68 /* Intervals2 WatchKit Extension */,
 				6EF6E557222FEC4100A58A68 /* Products */,
+				6EF6E593222FF02B00A58A68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +134,7 @@
 		6EF6E558222FEC4100A58A68 /* Intervals2 */ = {
 			isa = PBXGroup;
 			children = (
+				6EF6E592222FF02B00A58A68 /* Intervals2.entitlements */,
 				6EF6E559222FEC4100A58A68 /* AppDelegate.swift */,
 				6EF6E55B222FEC4100A58A68 /* ViewController.swift */,
 				6EF6E55D222FEC4100A58A68 /* Main.storyboard */,
@@ -146,12 +158,23 @@
 		6EF6E57B222FEC4500A58A68 /* Intervals2 WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6EF6E596222FF03E00A58A68 /* Intervals2 WatchKit Extension.entitlements */,
 				6EF6E57C222FEC4500A58A68 /* InterfaceController.swift */,
 				6EF6E57E222FEC4500A58A68 /* ExtensionDelegate.swift */,
 				6EF6E580222FEC4500A58A68 /* Assets.xcassets */,
 				6EF6E582222FEC4500A58A68 /* Info.plist */,
+				6EF6E590222FECEC00A58A68 /* RunController.swift */,
 			);
 			path = "Intervals2 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		6EF6E593222FF02B00A58A68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EF6E597222FF03E00A58A68 /* HealthKit.framework */,
+				6EF6E594222FF02B00A58A68 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,12 +245,22 @@
 				TargetAttributes = {
 					6EF6E555222FEC4100A58A68 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					6EF6E567222FEC4400A58A68 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 					6EF6E576222FEC4500A58A68 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -295,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF6E591222FECEC00A58A68 /* RunController.swift in Sources */,
 				6EF6E57F222FEC4500A58A68 /* ExtensionDelegate.swift in Sources */,
 				6EF6E57D222FEC4500A58A68 /* InterfaceController.swift in Sources */,
 			);
@@ -463,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Intervals2 WatchKit Extension/Intervals2 WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G865E4Z265;
 				INFOPLIST_FILE = "Intervals2 WatchKit Extension/Info.plist";
@@ -485,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Intervals2 WatchKit Extension/Intervals2 WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G865E4Z265;
 				INFOPLIST_FILE = "Intervals2 WatchKit Extension/Info.plist";
@@ -545,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Intervals2/Intervals2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G865E4Z265;
 				INFOPLIST_FILE = Intervals2/Info.plist;
@@ -563,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Intervals2/Intervals2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G865E4Z265;
 				INFOPLIST_FILE = Intervals2/Info.plist;

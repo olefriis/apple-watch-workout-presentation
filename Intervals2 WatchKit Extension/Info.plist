@@ -32,5 +32,9 @@
 	</dict>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Spike wants to run!</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Spike wants to run!</string>
 </dict>
 </plist>

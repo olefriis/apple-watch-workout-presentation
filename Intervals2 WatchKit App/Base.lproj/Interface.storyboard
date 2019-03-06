@@ -1,15 +1,75 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Start-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="Start" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Intervals2_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Start" id="gcP-y7-9Ok">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.068275221289999993" green="0.90181751939999999" blue="0.068542228780000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="startButtonTouched" destination="AgC-eL-Hgc" id="Cy4-mO-Dec"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
+        </scene>
+        <!--Run-->
+        <scene sceneID="5kG-e4-HTU">
+            <objects>
+                <controller identifier="Run" id="odk-CT-zIW" customClass="RunController" customModule="Intervals2_WatchKit_Extension">
+                    <items>
+                        <timer alignment="left" id="KUV-3V-0g0"/>
+                        <label alignment="left" text="Distance" id="WZL-7o-UvI"/>
+                        <button width="1" alignment="left" title="Stop" id="Cp0-ex-1Rd">
+                            <color key="backgroundColor" red="0.90181751939999999" green="0.03486574177" blue="0.071183481150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="stopButtonTouched" destination="odk-CT-zIW" id="16J-Cn-UUw"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="distanceLabel" destination="WZL-7o-UvI" id="S5l-0i-8pC"/>
+                        <outlet property="timer" destination="KUV-3V-0g0" id="ayh-Tc-0wv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="563" y="49"/>
+        </scene>
+        <!--NowPlaying-->
+        <scene sceneID="Pj5-v7-zpf">
+            <objects>
+                <controller identifier="NowPlaying" id="342-FW-1J7">
+                    <items>
+                        <nowPlayingView alignment="left" id="ueP-t6-PAP"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="830" y="53"/>
+        </scene>
+        <!--StopRun-->
+        <scene sceneID="BbN-sX-wyL">
+            <objects>
+                <controller identifier="StopRun" id="YAC-qW-Rlk">
+                    <items>
+                        <button width="1" alignment="left" title="Stop" id="O9M-wy-Wxj">
+                            <color key="backgroundColor" red="0.90181751939999999" green="0.03486574177" blue="0.071183481150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="290" y="57"/>
         </scene>
     </scenes>
 </document>
